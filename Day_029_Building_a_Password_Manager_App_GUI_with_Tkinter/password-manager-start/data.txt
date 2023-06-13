@@ -1,0 +1,1 @@
+{'Coursera': {'email': 'email@cousera.com', 'password': 'NVy2Ug$+LPXto7iT(0()1B5b'}
