@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="static/css/styles.css">
+    <title>Blog site</title>
+</head>
+<body>
+    <h1 class="title">My Blogsite</h1>
+    <div class="body-container">
+        <a href="{{ url_for('get_blog') }}">Go to blog</a>
+    </div>
+
+</body>
+<footer>
+    <p><span>&copy</span> Copyright Faisal Alhassan ({{ date }}). Built by Faisal Alhassan</p>
+</footer>
+</html>

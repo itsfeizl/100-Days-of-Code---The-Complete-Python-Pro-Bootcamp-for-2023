@@ -1,0 +1,104 @@
+{% extends "base.html" %}
+{% block title %}Edit Rating{% endblock %}
+    {% block styling %}
+        {{ super() }}
+
+        h1 {
+
+            padding-bottom: 5px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #000;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+        }
+
+        .author-rating {
+            display: flex;
+            width: 100%;
+            gap: 5%;
+        }
+
+        .author-rating input {
+            width: 90%;
+        }
+
+        .author {
+            width: 50%;
+        }
+
+        .rating {
+            width: 45%;
+        }
+
+
+
+        label {
+            margin-bottom: 10px;
+            margin-left: 10px;
+            font-weight: 600;
+            font-size: 0.9em;
+
+        }
+
+        input {
+            padding: 7px 10px;
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            font-size: 1.2em;
+            width: 95%;
+        }
+
+        input:focus,
+        input:active {
+            outline: none;
+        }
+
+        .btn {
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            font-weight: 600;
+        }
+    {% endblock %}
+{% block content %}
+    <div class="container">
+         <form action="{{ url_for('edit_book') }}" method="POST">
+
+             <h1>Edit Book</h1>
+             <!--
+             <p>Book title: {{book.title}}</p>
+             <p>Author: {{book.author}}</p>
+             <p>Current Rating: {{book.rating}}</p>
+             -->
+
+             <input hidden="hidden" name="id" value="{{book.id}}">
+
+             <div class="input-group">
+                 <label>Title:</label>
+                 <input name="title" type="text" value="{{book.title}}">
+             </div>
+
+             <div class="input-group">
+                 <div class="author-rating">
+                     <div class="author">
+                         <label>Author:</label>
+                        <input name="author" type="text" value="{{book.author}}">
+                     </div>
+                     <div class="rating">
+                         <label>Current Rating:</label>
+                         <input name="rating" type="text" value="{{book.rating}}">
+                     </div>
+                 </div>
+             </div>
+
+
+            <button type="submit" class="btn">Add Changes</button>
+         </form>
+    </div>
+{% endblock %}

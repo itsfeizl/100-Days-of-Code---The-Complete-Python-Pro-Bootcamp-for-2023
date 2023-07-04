@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Oswald:wght@300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+body {
+    font-family: "Inter", sans-serif;
+    color: #4b4b4d;
+  }
+
+.container {
+    display: flex;
+    gap: 3%;
+    width: 70%;
+    margin: 100px auto;
+  }
+
+.section {
+    padding: 50px 0;
+    border-top: 1px solid rgba(51, 51, 51, 0.4);
+    border-bottom: 1px solid (51, 51, 51, 0.4);
+  }
+
+.bio {
+    border-top: 0;
+}

@@ -1,0 +1,98 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Login</title>
+	</head>
+	<style>
+		* {
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+
+		body {
+			background-color: #ccc;
+		}
+
+		.container {
+			width: 50%;
+			margin: 100px auto;
+			padding: 50px;
+			border: 1px solid rgba(0, 0, 0, 0.6);
+			border-radius: 10px;
+			background-color: #fff;
+		}
+		.form_input {
+			display: flex;
+			flex-direction: column;
+			margin-bottom: 50px;
+		}
+
+		label {
+			margin-bottom: 5px;
+		}
+
+		input {
+			padding: 10px;
+			border: none;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+		}
+
+		input:focus,
+      	input:active {
+			outline: none;
+			border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+			background: none;
+		}
+
+		.btn {
+			border: 0;
+			width: 100%;
+			padding: 20px;
+			border-radius: 5px;
+			background-color: #333;
+			color: #fff;
+			font-size: 1.2em;
+			font-weight: 700;
+		}
+
+		input[submit] {
+			border: 0;
+			width: 100%;
+			padding: 20px;
+			border-radius: 5px;
+			background-color: #333;
+			color: #fff;
+			font-size: 1.2em;
+			font-weight: 700;
+		}
+	</style>
+	<body>
+        <div class="container">
+        <!-- This is where our form will go. -->
+			<form method="POST" action="{{ url_for('login') }}" novalidate>
+				{{ form.csrf_token }}
+				<div class="form_input">
+					<!-- {{ form.name.label }} --> {{ form.name(size=30, placeholder="Name") }}
+					{% for err in form.name.errors: %}
+						<span style="color: red">{{ err }}</span>
+					{% endfor %}
+				</div>
+				<div class="form_input">
+					<!-- {{ form.email.label }} --> {{ form.email(size=30, placeholder="Email") }}
+					{% for err in form.email.errors: %}
+						<span style="color: red">{{ err }}</span>
+					{% endfor %}
+				</div>
+				<div class="form_input">
+					<!-- {{ form.password.label }} --> {{ form.password(size=30, placeholder="Password") }}
+					{% for err in form.password.errors: %}
+						<span style="color: red">{{ err }}</span>
+					{% endfor %}
+				</div>
+				<input class="btn" type="submit" value="Log In">
+			</form>
+        </div>
+	</body>
+</html>

@@ -36,6 +36,7 @@ print(f"Exercise: {exercise}, Time: {exercise_endpoint}, Calories Burned: {calor
 # Write exercise data to Google Sheets
 
 today = datetime.now()
+print(today)
 date_string = today.strftime("%d/%m/%Y")
 time_string = today.strftime("%X")
 

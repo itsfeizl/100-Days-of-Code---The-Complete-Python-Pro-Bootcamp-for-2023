@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}My Library{% endblock %}
+{% block styling %}
+{{ super() }}
+{% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <span>My Library</span>
+            <a class="add" href="{{ url_for('add') }}">Add New Book</a>
+        </div>
+
+        {% if not books: %}
+            <p>There are currently no books in the library</p>
+        {% else %}
+            {% for book in books: %}
+                <div class="book-container">
+                    <ul style="padding: 0">
+                      <li style="list-style-type: none;"><h2 style="margin-bottom: 5px"><strong>{{ book.title }}</strong></h2>
+                          <ul>
+                              <li class="detail">
+                                  By {{ book.author }}
+                              </li>
+                              <li class="detail">
+                                  Rating: {{ book.rating }}/10
+                              </li>
+                          </ul>
+                      </li>
+                    </ul>
+                    <div class="edit-delete">
+                        <a href="{{ url_for('edit_book', id=book.id) }}">Edit</a>
+                        <a href="{{ url_for('delete', id=book.id) }}">Delete</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

@@ -1,0 +1,93 @@
+{% extends "base.html" %}
+{% block title %}Add Book{% endblock %}
+    {% block styling %}
+        {{ super() }}
+
+        h1 {
+
+            padding-bottom: 5px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #000;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+        }
+
+        .author-rating {
+            display: flex;
+            width: 100%;
+            gap: 5%;
+        }
+
+        .author-rating input {
+            width: 90%;
+        }
+
+        .author {
+            width: 50%;
+        }
+
+        .rating {
+            width: 45%;
+        }
+
+
+
+        label {
+            margin-bottom: 10px;
+            margin-left: 10px;
+            font-weight: 600;
+            font-size: 0.9em;
+
+        }
+
+        input {
+            padding: 7px 10px;
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            font-size: 1.2em;
+            width: 95%;
+        }
+
+        input:focus,
+        input:active {
+            outline: none;
+        }
+
+        .btn {
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            font-weight: 600;
+        }
+    {% endblock %}
+{% block content %}
+    <div class="container">
+    <form action="{{ url_for('add') }}" method="POST">
+        <h1>Add Book</h1>
+        <div class="input-group">
+            <label>Book Title:</label>
+            <input name="title" type="text" placeholder="Type book title here">
+        </div>
+        <div class="input-group">
+            <div class="author-rating">
+                <div class="author">
+                    <label>Book Author:</label>
+                    <input name="author" type="text" placeholder="Type book author's name here">
+                </div>
+                <div class="rating">
+                    <label>Rating:</label>
+                    <input name="rating" type="text" placeholder="Enter rating (from 1 to 10)">
+                </div>
+            </div>
+        </div>
+      <button type="submit" class="btn">Add Book</button>
+    </form>
+    </div>
+{% endblock %}
+
