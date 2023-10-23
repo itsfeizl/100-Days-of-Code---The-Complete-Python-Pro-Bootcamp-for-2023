@@ -1,0 +1,10 @@
+.contact-page-container {
+    height: 150vh;
+    background-color: #dddddd;
+    padding: 25% 30px;
+    text-align: center;
+}
+
+.contact-page-container h1 {
+    font-size: 5rem;
+}

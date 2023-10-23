@@ -1,0 +1,83 @@
+.about-section-container {
+    display: flex;
+    background-color: #eef3ec;
+}
+
+.about-text {
+    width: 50%;
+    padding-right: 50px;
+}
+
+.about-text-heading {
+    width: 80%;
+    font-size: 1.8rem;
+    line-height: 1;
+    margin-bottom: 30px;
+}
+
+.about-text p {
+    margin-bottom: 30px;
+}
+
+.board-members {
+    width: 50%;
+    padding-left: 30px
+}
+
+.board-members-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.board-member-cards-container {
+    display: flex;
+    gap: 20px;
+}
+
+.board-member-img {
+    margin-bottom: 15px;
+    background-color: #64696D;
+}
+
+.board-member-card h4 {
+    margin-bottom: 10px;
+}
+
+.more-link {
+    text-decoration: underline;
+    color: rgb(121, 140, 245)
+}
+
+
+@media screen and (max-width: 768px) {
+    .about-section-container {
+        flex-direction: column;
+        
+    }
+
+    .about-text {
+        width: 100%;
+        padding: 0;
+        margin-bottom: 30px;
+    }
+
+    .about-text-heading {
+        width: 100%;
+        font-size: 1.5rem;
+    }
+
+    .board-member-cards-container {
+        gap: 10px;
+    }
+
+    .board-members {
+        width: 100%;
+        padding-left: 0px
+    }
+
+    .more-link {
+        text-align: right;
+    }
+}

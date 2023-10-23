@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .t-row th, td {padding-right: 50px}
+    </style>
+</head>
+<body>
+
+      <table>
+          <thead style="text-align:left">
+            <tr>
+                <th>Headline</th>
+                <th>Category</th>
+                <th>Date Posted</th>
+                <th colspan="2">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+          {% for post in posts: %}
+            <tr class="t-row">
+                <td>{{ post.headline }}</td>
+                <td>{{ post.category }}</td>
+                <td>{{ post.date }}</td>
+                <td><a href="{{ url_for('edit_post', id=post.id) }}">Edit</a></td>
+                <td><a href="{{ url_for('delete_post', id=post.id) }}">Delete</a></td>
+            </tr>
+          {% endfor %}
+          </tbody>
+      </table>
+
+</body>
+</html>

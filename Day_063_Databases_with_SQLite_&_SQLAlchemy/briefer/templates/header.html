@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="static/css/styles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Briefer</title>
+  </head>
+
+  <body>
+    <!-- Navigation Menu -->
+    <section class="top-nav">
+      <div id="briefer"><a href="{{ url_for('home') }}">Briefer</a></div>
+      <input id="menu-toggle" type="checkbox" />
+      <label class="menu-button-container" for="menu-toggle">
+        <div class="menu-button"></div>
+      </label>
+      <ul class="menu">
+        <li><a href="#politics">Politics</a></li>
+        <li><a href="#business">Business</a></li>
+        <li><a href="#entertainment">Entertainment</a></li>
+        <li><a href="#sports">Sports</a></li>
+        <li><a href="#international">International</a></li>
+      </ul>
+    </section>

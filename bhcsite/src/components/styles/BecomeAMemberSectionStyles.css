@@ -1,0 +1,130 @@
+.get-certified {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #eef3ec;
+    margin-top: 50px;
+}
+
+.get-certified-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 75%;
+   
+    
+}
+
+.get-certified-text p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.get-certified-text h2 {
+    font-size: 4rem;
+    font-weight: 900;
+    line-height: 0.9;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.apply-checkstat-btns {
+    display: flex;
+    width: 80%;
+}
+
+.learn-more {
+    width: 20%;
+    
+}
+
+.pack-container {
+    position: relative;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    margin-bottom: 15px;
+}
+
+.pack-img {
+    width: 100%;
+    height: auto;
+    transition: .5s ease;
+}
+
+.pack-container:hover .pack-img {
+    opacity: 0.7;
+    cursor: pointer;
+}
+
+@media screen and (max-width: 1108px) {
+    .get-certified-text h2 {
+        font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .apply-checkstat-btns {
+        width: 85%;
+    }
+
+    .get-certified-text h2 {
+        font-size: 2.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .get-certified {
+        flex-direction: column;
+    } 
+
+    .get-certified-text {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+
+    .get-certified-text h2 {
+        font-size: 2rem;
+    }
+
+    .get-certified-text p {
+        font-size: 1rem;
+    }
+
+    .apply-checkstat-btns {
+        width: 100%;
+    }
+
+    .learn-more {
+        width: 100%;
+        display: flex;
+    }
+
+    .pack-container {
+        width: 50%;
+        margin-right: 20px;
+    }
+
+    .pack-download {
+        width: 30%;
+    }
+}
+
+
+@media screen and (max-width: 520px) {
+
+    .apply-checkstat-btns {
+        flex-direction: column;
+    }
+
+    .learn-more {
+        flex-direction: column;
+    }
+
+    .pack-container {
+        width: 100%;
+        margin-right: 0px;
+    }
+
+    .pack-download {
+        width: 100%;
+    }
+}

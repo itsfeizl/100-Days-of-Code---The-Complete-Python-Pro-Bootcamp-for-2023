@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}My Library{% endblock %}
+{% block styling %} {{ super() }} {% endblock %}
+{% block content %}
+    <div class="container">
+        <div class="header">
+            <span>My Library</span>
+            <a class="add" href="{{ url_for('add') }}">Add New Movie</a>
+        </div>
+
+        {% if not movies: %}
+            <p>There are currently no movies in the library</p>
+        {% else %}
+            {% for movie in movies: %}
+                <div class="book-container">
+                    <h2 style="margin-bottom: 5px"><strong>{{ movie.title }}</strong></h2>
+                    <div class="edit-delete">
+                        <a href="{{ url_for('edit_movie', id=movie.id) }}">Edit</a>
+                        <a href="{{ url_for('delete', id=movie.id) }}">Delete</a>
+                    </div>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+{% endblock %}

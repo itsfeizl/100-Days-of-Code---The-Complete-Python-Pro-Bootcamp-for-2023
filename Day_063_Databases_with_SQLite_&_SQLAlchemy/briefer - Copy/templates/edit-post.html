@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+  <div class="container">
+         <form action="{{ url_for('edit_post') }}" method="POST">
+             <h1>Edit Post</h1>
+
+             <input hidden="hidden" name="id" value="{{post.id}}">
+
+             <div class="input-group">
+                 <label>Headline:</label>
+                 <input name="headline" type="text" value="{{post.headline}}">
+             </div>
+             <div class="input-group">
+                 <label>Content:</label>
+                 <input name="content" type="text" value="{{post.content}}">
+             </div>
+             <div class="input-group">
+                 <label>Category:</label>
+                 <input name="category" type="text" value="{{post.category}}">
+             </div>
+             <div class="input-group">
+                 <label>Source:</label>
+                 <input name="source" type="text" value="{{post.source}}">
+             </div>
+             <div class="input-group">
+                 <label>Source URL:</label>
+                 <input name="source-url" type="text" value="{{ post.source_url }}">
+             </div>
+             <div class="input-group">
+                 <label>Date:</label>
+                 <input name="date" type="text" value="{{post.date}}">
+             </div>
+
+            <button type="submit" class="btn">Add Changes</button>
+
+         </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,81 @@
+.certified-members-section {
+    display: flex;
+}
+
+.certifed-section-text {
+    padding-right: 50px;
+    width: 50%;
+}
+
+.certifed-section-text p {
+    margin-bottom: 30px;
+}
+
+.certified-members {
+    display: flex;
+    width: 50%;
+    gap: 5%;
+}
+
+.certified-member-card {
+    background-color: #eef3ec;
+    color: #333;
+    width: 33%;
+    padding: 20px;
+}
+
+.business-logo {
+    height: 50px;
+    width: 50px;
+    border: 2px solid #333;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+
+.for-large-screen {
+    display: block;
+}
+
+.for-small-screen {
+    display: none;
+}
+
+
+@media screen and (max-width: 768px)  {
+    .certified-members-section {
+        flex-direction: column;
+    }
+
+    .certifed-section-text {
+        padding-right: 0px;
+        width: 100%;
+    }
+
+    .certified-members {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .for-small-screen {
+        display: block;
+    }
+
+    .for-large-screen {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 420px) {
+
+    .certified-members {
+        flex-direction: column;
+        width: 100%;
+    }
+    .certified-member-card {
+        width: 100%;
+        margin-bottom: 10px;
+    }
+}

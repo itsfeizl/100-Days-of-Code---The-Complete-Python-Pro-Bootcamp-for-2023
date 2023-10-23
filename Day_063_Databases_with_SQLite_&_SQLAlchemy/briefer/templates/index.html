@@ -1,0 +1,96 @@
+{% include 'header.html' %}
+
+    <!-- Main Content -->
+    <div class="wrapper">
+      <div class="content">
+
+        <div class="news-sections news-sections-top">
+          <div class="category-container">
+            <h1 id="politics">Politics</h1>
+              {% for post in politics_posts %}
+                  <ul>
+                    <li class="headline" onclick="toggleSummary(this)">
+                      {{ post.headline }}
+                      <p class="category">
+                        <span>{{ post.category }}</span><span>|</span>
+                        <span>{{ post.date }}</span><span>|</span>
+                        <span>
+                          <a href = "{{ post['source_url'] }}" target="_blank">{{ post.source }}<i class="fa fa-external-link link-icon" style="margin-left: 5px"></i></a>
+                        </span>
+                      </p>
+                      <div class="dropdown-content">
+                        <p>{{ post.content }}</p>
+                      </div>
+                    </li>
+                  </ul>
+              {% endfor %}
+          </div>
+          <div class="category-container">
+            <h1 id="business">Business</h1>
+            {% for post in business_posts %}
+                  <ul>
+                    <li class="headline" onclick="toggleSummary(this)">
+                      {{ post.headline }}
+                      <p class="category">
+                        <span>{{ post.category }}</span><span>|</span>
+                        <span>{{ post.date }}</span><span>|</span>
+                        <span>
+                          <a href="{{ post.source_url }}" target="_blank">{{ post.source }}<i class="fa fa-external-link link-icon" style="margin-left: 5px"></i></a>
+                        </span>
+                      </p>
+                      <div class="dropdown-content">
+                        <p>{{ post.content }}</p>
+                      </div>
+                    </li>
+                  </ul>
+              {% endfor %}
+          </div>
+          <div class="category-container">
+            <h1 id="entertainment">Entertainment</h1>
+            {% for post in entertainment_posts %}
+                  <ul>
+                    <li class="headline" onclick="toggleSummary(this)">
+                      {{ post.headline }}
+                      <p class="category">
+                        <span>{{ post.category }}</span><span>|</span>
+                        <span>{{ post.date }}</span><span>|</span>
+                        <span>
+                          <a href="{{ post.source_url }}" target="_blank">{{ post.source }}<i class="fa fa-external-link link-icon" style="margin-left: 5px"></i></a>
+                        </span>
+                      </p>
+                      <div class="dropdown-content">
+                        <p>{{ post.content }}</p>
+                      </div>
+                    </li>
+                  </ul>
+              {% endfor %}
+          </div>
+          <div class="category-container">
+            <h1 id="sports">Sports</h1>
+            {% for post in sports_posts %}
+                  <ul>
+                    <li class="headline" onclick="toggleSummary(this)">
+                      {{ post.headline }}
+                      <p class="category">
+                        <span>{{ post.category }}</span><span>|</span>
+                        <span>{{ post.date }}</span><span>|</span>
+                        <span>
+                          <a href="{{ post.source_url }}" target="_blank">{{ post.source }}<i class="fa fa-external-link link-icon" style="margin-left: 5px"></i></a>
+                        </span>
+                      </p>
+                      <div class="dropdown-content">
+                        <p>{{ post.content }}</p>
+                      </div>
+                    </li>
+                  </ul>
+              {% endfor %}
+          </div>
+        </div>
+      </div>
+      <div class="sidebar">
+        <div class="sidebar-in"></div>
+      </div>
+    </div>
+    <script src="static/js/script.js"></script>
+  </body>
+</html>

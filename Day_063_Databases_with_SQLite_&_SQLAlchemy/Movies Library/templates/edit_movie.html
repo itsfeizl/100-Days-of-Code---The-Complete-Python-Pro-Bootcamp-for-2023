@@ -1,0 +1,122 @@
+{% extends "base.html" %}
+{% block title %}Edit Movie{% endblock %}
+    {% block styling %}
+        {{ super() }}
+
+        h1 {
+
+            padding-bottom: 5px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #000;
+        }
+
+        .input-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 50px;
+        }
+
+        .author-rating {
+            display: flex;
+            width: 100%;
+            gap: 5%;
+        }
+
+        .author-rating input {
+            width: 90%;
+        }
+
+        .author {
+            width: 50%;
+        }
+
+        .rating {
+            width: 45%;
+        }
+
+
+
+        label {
+            margin-bottom: 10px;
+            margin-left: 10px;
+            font-weight: 600;
+            font-size: 0.9em;
+
+        }
+
+        input {
+            padding: 7px 10px;
+            border: none;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+            font-size: 1.2em;
+            width: 95%;
+        }
+
+        input:focus,
+        input:active {
+            outline: none;
+        }
+
+        .btn {
+            padding: 10px;
+            width: 100%;
+            border-radius: 5px;
+            background-color: #333;
+            color: #fff;
+            font-weight: 600;
+        }
+    {% endblock %}
+{% block content %}
+    <div class="container">
+         <form action="{{ url_for('edit_movie') }}" method="POST">
+
+             <h1>Edit Movie</h1>
+             <!--
+             <p>Movie title: {{movie.title}}</p>
+             <p>Author: {{movie.director}}</p>
+             <p>Current Rating: {{movie.rating}}</p>
+             -->
+
+             <input hidden="hidden" name="id" value="{{movie.id}}">
+
+             <div class="input-group">
+                 <label>Title:</label>
+                 <input name="title" type="text" value="{{movie.title}}">
+             </div>
+             <div class="input-group">
+                 <label>Release Year:</label>
+                 <input name="year" type="text" value="{{movie.year}}">
+             </div>
+             <div class="input-group">
+                 <label>Running Time:</label>
+                 <input name="running-time" type="text" value="{{movie.running_time}}">
+             </div>
+             <div class="input-group">
+                 <label>Genre:</label>
+                 <input name="genre" type="text" value="{{movie.genre}}">
+             </div>
+             <div class="input-group">
+                 <label>Rating:</label>
+                 <input name="rating" type="text" value="{{movie.rating}}">
+             </div>
+             <div class="input-group">
+                 <label>Director:</label>
+                 <input name="director" type="text" value="{{movie.director}}">
+             </div>
+             <div class="input-group">
+                 <label>Cast:</label>
+                 <input name="cast" type="text" value="{{movie.cast}}">
+             </div>
+             <div class="input-group">
+                 <label>About:</label>
+                 <input name="about" type="text" value="{{movie.about}}">
+             </div>
+             <div class="input-group">
+                 <label>Movie Image:</label>
+                 <input name="img_url" type="text" value="{{movie.img_url}}" multiple>
+             </div>
+
+            <button type="submit" class="btn">Add Changes</button>
+         </form>
+    </div>
+{% endblock %}
